@@ -1,0 +1,55 @@
+package homework212;
+public class Homework212 {
+    public static void main(String[] args) {
+        Triangle triangleOne=new Triangle(3,4,5);
+        System.out.println(triangleOne.toString());
+        System.out.println("Squere = "+String.format("%."+2+"f",triangleOne.area()));
+        
+        Triangle triangleTwo=new Triangle(0.3,0.4,0.5);
+        System.out.println(triangleTwo.toString());
+        System.out.println("Squere = "+String.format("%."+2+"f",triangleTwo.area()));
+    }
+}
+
+package homework212;
+public class Triangle {
+    private double sideA;
+    private double sideB;
+    private double sideC;
+    public Triangle(double sideA, double sideB, double sideC) {
+        super();
+        this.sideA = sideA;
+        this.sideB = sideB;
+        this.sideC = sideC;
+    }
+    public Triangle() {
+        super();
+    }
+    public double getSideA() {
+        return sideA;
+    }
+    public void setSideA(double sideA) {
+        this.sideA = sideA;
+    }
+    public double getSideB() {
+        return sideB;
+    }
+    public void setSideB(double sideB) {
+        this.sideB = sideB;
+    }
+    public double getSideC() {
+        return sideC;
+    }
+    public void setSideC(double sideC) {
+        this.sideC = sideC;
+    }
+    public double area(){
+        double p=(sideA+sideB+sideC)/2;
+        double area=Math.sqrt(p*(p-sideA)*(p-sideB)*(p-sideC));
+        return area;
+    }
+    @Override
+    public String toString() {
+        return "Triangle{" + "sideA=" + sideA + ", sideB=" + sideB + ", sideC=" + sideC + '}';
+    } 
+}
